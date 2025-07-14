@@ -21,7 +21,7 @@ public record ProductDTO(
                 product.getName(),
                 product.getPrice(),
                 product.getShortDescription(),
-                product.getDescription(), // Maps to Product's getDescription()
+                product.getDescription(),
                 product.getImages(),
                 product.getTechnicalSpecifications()
         );
