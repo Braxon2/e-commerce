@@ -1,5 +1,6 @@
 package com.dusan.ecommerce.config;
 
+import com.dusan.ecommerce.enums.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -31,6 +32,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/cart/**").hasAuthority(Role.USER.getAuthority())
+                        .requestMatchers(HttpMethod.PUT, "/api/cart/**").hasAuthority(Role.USER.getAuthority())
+                        .requestMatchers(HttpMethod.DELETE, "/api/cart/**").hasAuthority(Role.USER.getAuthority())
                         .anyRequest().permitAll()
                 )
                 .sessionManagement(session ->

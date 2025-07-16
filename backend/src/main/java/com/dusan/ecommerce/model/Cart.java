@@ -15,7 +15,7 @@ public class Cart {
 
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CartItem> items = new ArrayList<>();
+    private List<CartItem> items;
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -24,10 +24,11 @@ public class Cart {
 
 
     public Cart() {
+        this.items = new ArrayList<>();
     }
 
-    public Cart( List<CartItem> items) {
-        this.items = items;
+    public Cart(List<CartItem> items) {
+        this.items = items != null ? items : new ArrayList<>();
     }
 
     public void addItem(CartItem item) {
