@@ -1,0 +1,260 @@
+/* src/App.css */
+
+/* 1. Global Styles & Variables */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --background-color: #ffffff;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-color);
+  color: var(--text-color);
+}
+
+main {
+  padding: 1.5rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 2. Header & Navigation */
+
+/* 3. Forms (Login & Register) */
+
+/* 4. Product List Page */
+
+/* Default Grid View */
+
+/* 5. Product Detail Page */
+.pdp-container {
+  background: var(--background-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+.pdp-main {
+  display: grid;
+  gap: 2rem;
+}
+
+.pdp-gallery img {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.specs-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.specs-table td:first-child {
+  font-weight: bold;
+}
+
+/* 6. Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* 7. Responsive Breakpoints (Mobile First) */
+
+/* Tablet */
+@media (min-width: 768px) {
+  main {
+    padding: 2rem;
+  }
+
+  .plp-controls {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .plp-controls > * {
+    flex-basis: 30%;
+  }
+
+  .pdp-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* 8. Header & Navigation Styles */
+
+/* 9. Not Found Page Styles */
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.not-found-container h1 {
+  font-size: 2.5rem;
+  color: var(--dark-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.not-found-container p {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  max-width: 400px;
+}
+
+.not-found-container .btn {
+  margin-top: 2rem;
+  max-width: 200px;
+}
+
+/* Responsive adjustments for Header */
+
+/* 10. Product Card Styles */
+.product-card {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-card-content {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-name {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.product-card-name a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+.product-card-name a:hover {
+  color: var(--primary-color);
+}
+
+.product-card-desc {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.product-card-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.product-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.btn.btn-success {
+  background-color: var(--success-color);
+  color: white;
+  flex-grow: 1;
+}
+/* 11. Pagination Styles */

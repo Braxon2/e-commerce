@@ -1,0 +1,109 @@
+.product-card-grid {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.product-card-grid .card-content {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-grid h3 {
+  margin-top: 0;
+}
+.product-card-grid .card-price {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.product-card-grid .card-desc {
+  flex-grow: 1;
+}
+.product-card-grid .card-actions {
+  margin-top: 1rem;
+}
+
+.product-card-list {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  gap: 1rem;
+}
+
+.product-card-list img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.product-card-list .card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.pagination-btn {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.5rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination-btn.nav-btn {
+  padding: 0 1rem;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.pagination-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: var(--secondary-color);
+}
+
+.pagination-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  font-weight: bold;
+}
+
+.pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: var(--secondary-color);
+}
